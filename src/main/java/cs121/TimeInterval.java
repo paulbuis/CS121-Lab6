@@ -5,8 +5,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class TimeInterval {
-    private Date start;
-    private Date end;
+    final private Date start;
+    final private Date end;
     private static DateFormat dateFormatter =
             new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
@@ -17,6 +17,10 @@ public class TimeInterval {
         if (end == null) {
             throw new IllegalArgumentException("end may not be null");
         }
+        // TODO: fix sneaky error in following if statement!
+        //       changes to start will cause changes to this.start
+        //       since they are aliases for same Date object
+        //       same with end and this.end
         if (start.before(end)) {
             this.start = start;
             this.end = end;

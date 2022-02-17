@@ -92,13 +92,21 @@ public class TimeIntervalDemo {
         }
         System.out.println("ti2=" + ti2);
         if (ti2.duration() < 0.0) {
-            System.out.println("very bad!!!");
+            System.out.println("negative duration, very bad!!!");
             System.out.println("ti2.duration()= " + ti2.duration());
         }
         System.out.println("ti3=" + ti3);
         if (ti3.duration() < 0.0) {
-            System.out.println("very bad!!!");
+            System.out.println("negative duration, very bad!!!");
             System.out.println("ti3.duration()= " + ti3.duration());
+        }
+
+        TimeInterval ti6 = new TimeInterval(ti4);
+        System.out.println("\nti6=" + ti6);
+        if (ti4.equals(ti6)) {
+            System.out.println("ti4.equals(ti6), good");
+        } else {
+            System.out.println("!ti4.equals(ti6), bad");
         }
     }
 }
