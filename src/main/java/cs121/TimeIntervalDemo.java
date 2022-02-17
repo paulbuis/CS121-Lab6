@@ -84,12 +84,21 @@ public class TimeIntervalDemo {
             System.out.println("!ti1.overlaps(ti5), good");
         }
 
-        first.setSeconds(first.getSeconds() + 2);
+        first.setSeconds(first.getSeconds() + 20);
         System.out.println("\nti1=" + ti1);
-        System.out.println("t1.duration()= " + ti1.duration());
+        if (ti1.duration() < 0.0) {
+            System.out.println("very bad!!!");
+            System.out.println("ti1.duration()= " + ti1.duration());
+        }
         System.out.println("ti2=" + ti2);
-        System.out.println("t2.duration()= " + ti2.duration());
+        if (ti2.duration() < 0.0) {
+            System.out.println("very bad!!!");
+            System.out.println("ti2.duration()= " + ti2.duration());
+        }
         System.out.println("ti3=" + ti3);
-        System.out.println("t3.duration()= " + ti3.duration());
-   }
+        if (ti3.duration() < 0.0) {
+            System.out.println("very bad!!!");
+            System.out.println("ti3.duration()= " + ti3.duration());
+        }
+    }
 }

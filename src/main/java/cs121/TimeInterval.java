@@ -65,8 +65,8 @@ public class TimeInterval {
     @Override
     public String toString() {
         // TODO: fix this return statement
-        return "[" + start + " to " + end + "]";
-        //return "fix this!";
+        //       use static formatDate method!
+        return "fix this!";
     }
 
 }
